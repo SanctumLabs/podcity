@@ -129,6 +129,7 @@ in this repository.
 - [Virtualenv](https://virtualenv.pypa.io/)
 - [Django AP Scheduler](https://github.com/jcass77/django-apscheduler)
 - [Feed Parser](https://pythonhosted.org/feedparser/)
+- [Django Environ](https://django-environ.readthedocs.io/)
 
 ## Authors
 
