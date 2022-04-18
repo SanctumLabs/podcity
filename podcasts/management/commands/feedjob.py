@@ -1,17 +1,15 @@
 import logging
 
-from django.core.management.base import BaseCommand
-from django.conf import settings
-
 import feedparser
-from dateutil import parser
 from apscheduler.schedulers.blocking import BlockingScheduler
 from apscheduler.triggers.cron import CronTrigger
+from dateutil import parser
+from django.conf import settings
+from django.core.management.base import BaseCommand
 from django_apscheduler.jobstores import DjangoJobStore
 from django_apscheduler.models import DjangoJobExecution
 
 from podcasts.models import Episode
-
 
 logger = logging.getLogger(__name__)
 
