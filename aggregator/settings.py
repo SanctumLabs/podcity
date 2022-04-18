@@ -9,9 +9,10 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
-import environ
-from pathlib import Path
 import os
+from pathlib import Path
+
+import environ
 
 env = environ.Env(
     # set casting, default value
@@ -27,71 +28,72 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Raises Django's ImproperlyConfigured
 # exception if SECRET_KEY not in os.environ
-SECRET_KEY = env('SECRET_KEY', default='django-insecure-vayv_x-z4lm5on05ihxo4ke8amc!x$aieq=78uirh7u8*$5@yx')
+SECRET_KEY = env(
+    "SECRET_KEY",
+    default="django-insecure-vayv_x-z4lm5on05ihxo4ke8amc!x$aieq=78uirh7u8*$5@yx",
+)
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = env('DEBUG')
+DEBUG = env("DEBUG")
 
-ALLOWED_HOSTS = [] if DEBUG else env('ALLOWED_HOSTS', default='*').split(',')
+ALLOWED_HOSTS = [] if DEBUG else env("ALLOWED_HOSTS", default="*").split(",")
 
 # Application definition
 
 INSTALLED_APPS = [
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
+    "django.contrib.admin",
+    "django.contrib.auth",
+    "django.contrib.contenttypes",
+    "django.contrib.sessions",
+    "django.contrib.messages",
+    "django.contrib.staticfiles",
     # Project Apps
-    'podcasts.apps.PodcastsConfig',
+    "podcasts.apps.PodcastsConfig",
     # 3rd Party
-    'django_apscheduler',
+    "django_apscheduler",
 ]
 
 MIDDLEWARE = [
-    'django.middleware.security.SecurityMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    "django.middleware.security.SecurityMiddleware",
+    "django.contrib.sessions.middleware.SessionMiddleware",
+    "django.middleware.common.CommonMiddleware",
+    "django.middleware.csrf.CsrfViewMiddleware",
+    "django.contrib.auth.middleware.AuthenticationMiddleware",
+    "django.contrib.messages.middleware.MessageMiddleware",
+    "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
-ROOT_URLCONF = 'aggregator.urls'
+ROOT_URLCONF = "aggregator.urls"
 
 TEMPLATES = [
     {
-        'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [
-            BASE_DIR / 'templates'
-        ],
-        'APP_DIRS': True,
-        'OPTIONS': {
-            'context_processors': [
-                'django.template.context_processors.debug',
-                'django.template.context_processors.request',
-                'django.contrib.auth.context_processors.auth',
-                'django.contrib.messages.context_processors.messages',
+        "BACKEND": "django.template.backends.django.DjangoTemplates",
+        "DIRS": [BASE_DIR / "templates"],
+        "APP_DIRS": True,
+        "OPTIONS": {
+            "context_processors": [
+                "django.template.context_processors.debug",
+                "django.template.context_processors.request",
+                "django.contrib.auth.context_processors.auth",
+                "django.contrib.messages.context_processors.messages",
             ],
         },
     },
 ]
 
-WSGI_APPLICATION = 'aggregator.wsgi.application'
+WSGI_APPLICATION = "aggregator.wsgi.application"
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': env('DATABASE_NAME', default='podcity'),
-        'USER': env('DATABASE_USER', default='podcity_user'),
-        'PASSWORD': env('DATABASE_PASSWORD', default='password'),
-        'HOST': env('DATABASE_HOST', default='localhost'),
-        'PORT': env('DATABASE_PORT', default='5432'),
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": env("DATABASE_NAME", default="podcity"),
+        "USER": env("DATABASE_USER", default="podcity_user"),
+        "PASSWORD": env("DATABASE_PASSWORD", default="password"),
+        "HOST": env("DATABASE_HOST", default="localhost"),
+        "PORT": env("DATABASE_PORT", default="5432"),
     }
     # if using sqlite3, use this:
     # 'default': {
@@ -105,25 +107,25 @@ DATABASES = {
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+        "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+        "NAME": "django.contrib.auth.password_validation.MinimumLengthValidator",
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+        "NAME": "django.contrib.auth.password_validation.CommonPasswordValidator",
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+        "NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",
     },
 ]
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = "en-us"
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = "UTC"
 
 USE_I18N = True
 
@@ -134,26 +136,20 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
-STATIC_URL = '/static/'
-STATICFILES_DIRS = [
-    BASE_DIR / 'static'
-]
+STATIC_URL = "/static/"
+STATICFILES_DIRS = [BASE_DIR / "static"]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 LOGGING = {
-    'version': 1,
-    'disable_existing_loggers': False,
-    'handlers': {
-        'console': {
-            'class': 'logging.StreamHandler'
-        }
+    "version": 1,
+    "disable_existing_loggers": False,
+    "handlers": {"console": {"class": "logging.StreamHandler"}},
+    "root": {
+        "handlers": ["console"],
+        "level": "INFO",
     },
-    'root': {
-        'handlers': ['console'],
-        'level': 'INFO',
-    }
 }

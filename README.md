@@ -1,10 +1,10 @@
 # PodCity
 
 PodCity is a simple web application that aggregates podcasts from various sources and _feeds_ them to you.
-Inspiration comes from people who listen to multiple podcasts and want one place to access them all and also inspiration 
+Inspiration comes from people who listen to multiple podcasts and want one place to access them all and also inspiration
 ideally just comes from apps like Apple Podcasts, Google Podcasts, Spotify and the likes.
 
-This uses the [RSS](https://en.wikipedia.org/wiki/RSS_%28standard%29) standard to aggregate the feeds as most feeds 
+This uses the [RSS](https://en.wikipedia.org/wiki/RSS_%28standard%29) standard to aggregate the feeds as most feeds
 follow this standard, making the aggregation process simpler.
 
 ## Pre-requisites
@@ -25,7 +25,7 @@ changes will need to be made.
 
 ### Python 3+, Pip and Virtualenv
 
-This application runs on Python 3+, so make sure you have Python 3+ installed in you local development machine. Check 
+This application runs on Python 3+, so make sure you have Python 3+ installed in you local development machine. Check
 [here](https://www.python.org/downloads/) for more information. Also, you will need [Pip](https://pypi.org/project/pip/)
 and [virtualenv](https://virtualenv.pypa.io/) installed.
 
@@ -59,7 +59,7 @@ docker-compose up
 ```
 
 > if on linux
- 
+
 
 ```bash
 docker compose up
@@ -80,12 +80,12 @@ python manage.py test
 Now, for the fun part, running the application. Running the application requires the following steps:
 
 ```bash
-python manage.py makemigrations 
+python manage.py makemigrations
 python manage.py migrate
 ```
 
 > First run migrations to ensure that the database is up-to date.
- 
+
 ```bash
 python manage.py createsuperuser
 ```
@@ -100,7 +100,7 @@ python manage.py feedjob
 ```
 
 > This command will fetch the podcasts and feed them into the database. Checkout more of the code [here](./podcasts/management/commands/feedjob.py)
- 
+
 Now, you can run the application with the following command:
 
 ```bash
@@ -111,11 +111,11 @@ You can now be able to access the Admin Panel [here](http://localhost:8000/admin
 
 That's it! You should now be able to use PodCity to aggregate podcasts from various sources and feed them to you.
 
-Adding more podcasts is as simple as adding them to [Feed Job](./podcasts/management/commands/feedjob.py). 
+Adding more podcasts is as simple as adding them to [Feed Job](./podcasts/management/commands/feedjob.py).
 
 ## Versioning
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags](https://github.com/SanctumLabs/podcity/releases) 
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags](https://github.com/SanctumLabs/podcity/releases)
 in this repository.
 
 ## Built With
