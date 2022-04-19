@@ -36,7 +36,7 @@ def save_new_episode(feed):
                 link=item.link,
                 image=podcast_image,
                 podcast_name=podcast_title,
-                guid=item.guid
+                guid=item.guid,
             )
             episode.save()
 
@@ -70,23 +70,23 @@ class Command(BaseCommand):
 
         scheduler.add_job(
             func=fetch_realpython_episodes,
-            trigger='interval',
+            trigger="interval",
             # todo: make this configurable and set to a week in a production environment, minutes in a day * 7
             minutes=2,
             id="The Real Python Podcast",
             max_instances=1,
-            replace_existing=True
+            replace_existing=True,
         )
         logger.info("Added job: The Real Python Podcast")
 
         scheduler.add_job(
             func=fetch_talkpython_episodes,
-            trigger='interval',
+            trigger="interval",
             # todo: make this configurable and set to a week in a production environment, minutes in a day * 7
             minutes=2,
             id="Talk Python Feed",
             max_instances=1,
-            replace_existing=True
+            replace_existing=True,
         )
         logger.info("Added job: Talk Python Feed")
 
@@ -94,11 +94,13 @@ class Command(BaseCommand):
             func=delete_job_executions,
             trigger=CronTrigger(
                 # Midnight on Monday, before start of next work week
-                day_of_week="mon", hour="00", minute="00"
+                day_of_week="mon",
+                hour="00",
+                minute="00",
             ),
             id="Delete Old Job Executions",
             max_instances=1,
-            replace_existing=True
+            replace_existing=True,
         )
         logger.info("Added weekly job: Delete Old Job Executions")
 

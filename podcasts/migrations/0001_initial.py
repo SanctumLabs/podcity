@@ -7,21 +7,28 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='Episode',
+            name="Episode",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('title', models.CharField(max_length=255)),
-                ('description', models.TextField()),
-                ('pub_date', models.DateTimeField()),
-                ('link', models.URLField()),
-                ('image', models.URLField()),
-                ('podcast_name', models.CharField(max_length=255)),
-                ('guid', models.CharField(max_length=50)),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("title", models.CharField(max_length=255)),
+                ("description", models.TextField()),
+                ("pub_date", models.DateTimeField()),
+                ("link", models.URLField()),
+                ("image", models.URLField()),
+                ("podcast_name", models.CharField(max_length=255)),
+                ("guid", models.CharField(max_length=50)),
             ],
         ),
     ]
