@@ -1,6 +1,7 @@
 from django.test import TestCase
-from django.utils import timezone
 from django.urls.base import reverse
+from django.utils import timezone
+
 from .models import Episode
 
 

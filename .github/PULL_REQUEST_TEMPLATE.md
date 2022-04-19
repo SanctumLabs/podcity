@@ -7,7 +7,7 @@ Fixes # (issue)
 ## How can we test this?
 
 Please describe the tests that you ran to verify your changes.
- 
+
 Please also note any relevant details for your test configuration.
 
 ## Checklist:
