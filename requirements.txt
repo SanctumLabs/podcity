@@ -13,4 +13,4 @@ sgmllib3k==1.0.0
 six==1.17.0
 sqlparse==0.5.3
 tzdata==2025.1
-tzlocal==5.2
+tzlocal==5.3
