@@ -12,5 +12,5 @@ pytz-deprecation-shim==0.1.0.post0
 sgmllib3k==1.0.0
 six==1.17.0
 sqlparse==0.5.3
-tzdata==2025.1
+tzdata==2025.2
 tzlocal==5.3.1
