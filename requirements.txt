@@ -1,4 +1,4 @@
-APScheduler==3.11.0
+APScheduler==3.11.1
 asgiref==3.10.0
 backports.zoneinfo==0.2.1
 Django==5.2.7
