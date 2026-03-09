@@ -7,7 +7,7 @@ django-environ==0.13.0
 feedparser==6.0.12
 psycopg2==2.9.11
 python-dateutil==2.9.0.post0
-pytz==2025.2
+pytz==2026.1.post1
 pytz-deprecation-shim==0.1.0.post0
 sgmllib3k==1.0.0
 six==1.17.0
