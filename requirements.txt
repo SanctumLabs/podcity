@@ -4,7 +4,7 @@ backports.zoneinfo==0.2.1
 Django==6.0.7
 django-apscheduler==0.7.0
 django-environ==0.14.0
-feedparser==6.0.12
+feedparser==6.0.14
 psycopg2==2.9.12
 python-dateutil==2.9.0.post0
 pytz==2026.3.post1
